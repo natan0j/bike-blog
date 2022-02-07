@@ -1,0 +1,11 @@
+<div class="container">
+<div class="text">
+<p>Dziś jest: {{ today | date }}</p>
+<p *ngFor="let event of events"> Najbliższy event: {{ event.name }} {{ event.date | date }}</p>
+<p>POZOSTAŁO {{ days }} DNI</p>
+
+<div class="custom-slider">
+<ngx-slider [value]="days" [options]="options"></ngx-slider>
+</div>
+</div>
+</div>

@@ -1,3 +1,4 @@
+
 <mat-toolbar color="primary">
   <svg xmlns="http://www.w3.org/2000/svg">
   
@@ -12,14 +13,20 @@
   </svg>
   
   <!-- We use a custom attribute to set the text that the pseudo element should display and blur. In this case, we use the first character of the word. -->
-  
-  <span filter-content="S">CYCLER</span>
+  <a routerLink="/"><span filter-content="S">CYCLER</span></a>
+  <div>
+  <a routerLink="/signup" class="signup">SIGN UP</a>
+  <a routerLink="/login" class="login">LOGIN</a>
+  </div>
+
+
 </mat-toolbar>
 <div class="main">
+  <router-outlet></router-outlet>
 <div class="countdown">
-<app-countdown></app-countdown>
+<div *ngIf="router.url =='/'"><app-countdown></app-countdown></div>
 </div>
-<div class="headers">
+<div class="headers" *ngIf="router.url == '/'">
   <ul>
   <li>CYCLISTS</li>
   <li>NEWS</li>
@@ -28,10 +35,12 @@
   <li>HISTORY</li>
 </ul>
 </div>
+
 </div>
 <h1 style="text-align: center; padding-top: 15%;">
   TUTAJ SEKCJA WPISÓW
 </h1>
 
 <app-event-assign></app-event-assign>
+
 

@@ -12,12 +12,13 @@ export class CountdownComponent {
 
   today: number = Date.now();
   events: Event[] = [
-    {name: 'Wyścig Podlasia', date: '2/22/22'}
+    {name: 'Podlasie Race', date: '2/20/22 18:00'}
   ]
   now = moment(this.today)
   end = moment(this.events[0].date)
   duration = moment.duration(this.end.diff(this.now));
-  days = Math.floor( this.duration.asDays());
+  days = Math.floor(this.duration.asDays());
+  hours = Math.floor(this.duration.asHours());
   options: Options = {
     floor: 0,
     ceil: 70,

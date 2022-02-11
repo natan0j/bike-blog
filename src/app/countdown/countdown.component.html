@@ -1,9 +1,9 @@
 <div class="container">
 <div class="text">
-<p>Dziś jest: {{ today | date }}</p>
-<p *ngFor="let event of events"> Najbliższy event: {{ event.name }} {{ event.date | date }}</p>
-<p>POZOSTAŁO {{ days }} DNI</p>
-
+<p><b>Today is:</b> {{ today | date:'dd/MM/yyyy HH:mm' }}</p>
+<p *ngFor="let event of events"><b>Upcoming event:</b> {{ event.name }} {{ event.date | date:'dd/MM/yyyy HH:mm' }}</p>
+<h2 *ngIf="days>0">{{ days }} DAYS LEFT</h2>
+<h2 *ngIf="days<=0">{{hours}} HOURS LEFT </h2>
 <div class="custom-slider">
 <ngx-slider [value]="days" [options]="options"></ngx-slider>
 </div>

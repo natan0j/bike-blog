@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "cyclerjb": {
+      "hosting": {
+        "bike-blog": [
+          "cyclerjb"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "cyclerjb"
+  }
+}

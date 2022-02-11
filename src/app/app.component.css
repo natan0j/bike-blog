@@ -3,11 +3,14 @@ mat-toolbar{
     top: 0;
     z-index: 1;
     height: 12vh;
-    text-align: left;
+    
     display: flex;
-    justify-content: left;
+    justify-content: space-between;
     margin: 0%;
-} 
+}
+.login {
+  padding-left: 6%;
+}
 /* We’ll set some colors and center everything. */
 
   
@@ -70,4 +73,8 @@ mat-toolbar{
     list-style-position: inside;
     text-align: center;
     list-style-type: circle;
+  }
+  a {
+    text-decoration: none;
+    color: black;
   }

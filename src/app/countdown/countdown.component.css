@@ -1,12 +1,11 @@
 .container {
-    background: #FDD835;
-    width: 50vw;
-    clip-path: polygon(100% 0, 0 100%, 100% 100%);
+    
+    width: 20vw;
     padding-bottom: 2%;
 }
 .text {
     font-size: 1vw;
     padding-top: 22%;
-    text-align: right;
+    text-align: center;
     margin-right: 1%;
 }

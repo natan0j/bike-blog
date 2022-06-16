@@ -48,10 +48,7 @@ mat-toolbar{
   .main {
     margin: 0;
     width: 100%;
-    height: 87.5%;
-    background-image: url('../assets/images/background.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
+    height: 88%;
   }
   .countdown {
       background-color: rgb(#FDD835);
@@ -60,20 +57,7 @@ mat-toolbar{
       right: 0;
 
   }
-  ul {
-    display: flex;
-    margin: 0;
-    padding-top: 2%;
-  }
-  li {
-    flex: 3;
-    font-size: 20pt;
-    font-weight: 800;
-    color: #fdd835;
-    list-style-position: inside;
-    text-align: center;
-    list-style-type: circle;
-  }
+  
   a {
     text-decoration: none;
     color: black;

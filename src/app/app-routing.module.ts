@@ -10,9 +10,11 @@ import { AuthGuard, canActivate,
   redirectUnauthorizedTo,
 } from '@angular/fire/auth-guard';
 import { LoginMainComponent } from './login-main/login-main.component';
+import { UserpanelComponent } from './userpanel/userpanel.component';
 
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['']);
 const routes: Routes = [
+  {path: '', component: UserpanelComponent},
   {path: 'signup', component: SignupComponent},
   {path: 'login', component: LoginMainComponent},
   {path: 'adminpanel', component: AdminpanelComponent, canActivate: [AuthGuard], data: {authGuardPipe: redirectUnauthorizedToLogin}}

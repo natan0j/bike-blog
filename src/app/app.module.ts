@@ -1,3 +1,4 @@
+import { AngularFireDatabase } from '@angular/fire/compat/database';
 
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -16,7 +17,7 @@ import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAnalytics,getAnalytics,ScreenTrackingService,UserTrackingService } from '@angular/fire/analytics';
 import { provideAuth,getAuth } from '@angular/fire/auth';
-import { provideDatabase,getDatabase } from '@angular/fire/database';
+import { provideDatabase,getDatabase, Database } from '@angular/fire/database';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { provideFunctions,getFunctions } from '@angular/fire/functions';
 import { provideMessaging,getMessaging } from '@angular/fire/messaging';
@@ -28,6 +29,12 @@ import { LoginComponent } from './login/login.component';
 import { AdminpanelComponent } from './adminpanel/adminpanel.component';
 import { LoginGuardService } from './login-guard.service';
 import { LoginMainComponent } from './login-main/login-main.component';
+import { UserpanelComponent } from './userpanel/userpanel.component';
+import { EventsComponent } from './events/events.component';
+import { list } from 'rxfire/database';
+import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireModule } from '@angular/fire/compat';
+import { EventDetailsComponent } from './event-details/event-details.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +44,11 @@ import { LoginMainComponent } from './login-main/login-main.component';
     SignupComponent,
     LoginComponent,
     AdminpanelComponent,
-    LoginMainComponent
+    LoginMainComponent,
+    UserpanelComponent,
+    EventsComponent,
+    EventDetailsComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -60,10 +71,13 @@ import { LoginMainComponent } from './login-main/login-main.component';
     provideRemoteConfig(() => getRemoteConfig()),
     provideStorage(() => getStorage()),
     HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebase),
+   
+    
 
   ],
   providers: [
-    ScreenTrackingService,UserTrackingService, LoginGuardService
+    ScreenTrackingService,UserTrackingService, LoginGuardService,
   ],
   bootstrap: [AppComponent]
 })

@@ -12,7 +12,7 @@ export class CountdownComponent {
 
   today: number = Date.now();
   events: Event[] = [
-    {name: 'Podlasie Race', date: '2/20/22 18:00'}
+    {name: 'Tour De France', date: '7/01/22 7:00'}
   ]
   now = moment(this.today)
   end = moment(this.events[0].date)

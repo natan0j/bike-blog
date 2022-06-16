@@ -1,4 +1,7 @@
-export interface Event {
-    name: string;
-    date: string;
+export class Event {
+    key?: string | null;
+    name?: string;
+    date?: string;
+    description?: string | null;
+
 }

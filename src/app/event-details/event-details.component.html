@@ -1,0 +1,37 @@
+<div *ngIf="currentEvent" class="edit-form">
+    <h4>Event</h4>
+    <form>
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          [(ngModel)]="currentEvent.name"
+          name="title"
+        />
+      </div>
+      <div class="form-group">
+        <label form="date">Date</label>
+        <input
+          type="date"
+          class="form-control"
+          id="date"
+          [(ngModel)]="currentEvent.date"
+          name="date"
+        />
+      </div>
+     
+    
+    <button (click)="deleteEvent()">
+      Delete
+    </button>
+    <button type="submit"  (click)="updateEvent()">
+      Update
+    </button>
+    <p>{{ message }}</p>
+  
+  <div *ngIf="!currentEvent">
+    <br />
+    <p>Cannot access this Event...</p>
+  </div>

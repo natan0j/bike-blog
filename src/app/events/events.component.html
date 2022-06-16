@@ -1,0 +1,24 @@
+
+<div >
+    <div >
+      <h3>Events List</h3>
+      <h4>Click on Event to edit</h4>
+      <ul >
+        <li style="word-wrap: break-word; width: 50%"
+          
+          *ngFor="let event of events; let i = index"
+          [class.active]="i == currentIndex"
+          (click)="setActiveEvent(event, i)"
+        >
+          {{ event.name }}
+          {{ event.date}}
+          {{ event.description}}
+        </li>
+      </ul>
+    </div>
+    <div *ngIf="currentEvent">
+      <app-event-details
+      (refreshList)="refreshList()"
+        [event]="currentEvent"
+      ></app-event-details>
+  </div>

@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
   }> = new EventEmitter();
   constructor(
     private fb: FormBuilder,
+    public router: Router,
     
   ) { }
   form: FormGroup;

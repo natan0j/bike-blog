@@ -2,19 +2,32 @@
     Sekcja zarządzania eventami
 </h1>
 
-<div class="eventForm" style="padding: 10%;">
-    <h2>Wprowadz Nazwe i Date eventu</h2>
-    <div>
-        <input type="text" placeholder="Event Name" [(ngModel)]="eventName">
-    </div>
-    <div>
-        <input type="datetime-local" placeholder="date" [(ngModel)]="eventDate">
-     </div>
-     <button (click)="createEvent()">ADD EVENT</button>
+<div *ngIf="!submitted">
+    <form #eventForm="ngForm" (ngSubmit)="onSubmit(eventForm)">
+        <div class="form-group">
+        <label>Event Name</label>
+        <input class="form-control" name="name" #name="ngModel"
+        [(ngModel)]="event.name" placeholder="Event Name" required>
+        </div>
+        <div class="form-group">
+            <label>Event Date</label>
+            <input class="form-control" name="date" #name="ngModel" type="date"
+            [(ngModel)]="event.date" placeholder="Event Date" required>
+            </div>
+            <div class="form-group">
+                <label>Event Description</label>
+               
+                <textarea class="form-control" name="description" #name="ngModel" [(ngModel)]="event.description">
+                    Type something about this blog...
+                </textarea>
+                </div>
+            <button type="submit" [disabled]="!eventForm.valid" [disabled]="eventForm.invalid">Submit Event</button>
+    </form>
+</div>
+<div *ngIf="submitted">
+    <h4>New Event created successfully!</h4>
+    <button (click)="newEvent()">Create New</button>
+</div>
 
-     <p *ngFor="let event of events">{{ event.name }} {{ event.date }} </p>
-    </div>
-
-    <button (click)="readData()">READ DATA</button>
 
     

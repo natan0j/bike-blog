@@ -34,8 +34,11 @@ import { EventsComponent } from './events/events.component';
 import { list } from 'rxfire/database';
 import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireModule } from '@angular/fire/compat';
-import { EventDetailsComponent } from './event-details/event-details.component';
-
+import { EventDetailsComponent } from './event-details/event-details.component'; 
+import { AngularFireStorage } from '@angular/fire/compat/storage';
+import { FileUploadFormComponent } from './file-upload-form/file-upload-form.component';
+import { UploadDetailsComponent } from './upload-details/upload-details.component';
+import { UploadListComponent } from './upload-list/upload-list.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,6 +51,10 @@ import { EventDetailsComponent } from './event-details/event-details.component';
     UserpanelComponent,
     EventsComponent,
     EventDetailsComponent,
+    FileUploadFormComponent,
+    UploadDetailsComponent,
+    UploadListComponent,
+  
     
   ],
   imports: [

@@ -21,12 +21,26 @@
                     Type something about this blog...
                 </textarea>
                 </div>
+                <div class="form-group">
+                    <label>Event Image</label>
+                    <input class="form-control" name="name" #name="ngModel" type="button"
+                    [(ngModel)]="event.image" placeholder="Event Image" required>
+                    </div>
             <button type="submit" [disabled]="!eventForm.valid" [disabled]="eventForm.invalid">Submit Event</button>
     </form>
 </div>
 <div *ngIf="submitted">
     <h4>New Event created successfully!</h4>
     <button (click)="newEvent()">Create New</button>
+</div>
+
+<div>
+    <h2>Dodaj foto do postu</h2>
+    <app-file-upload-form></app-file-upload-form>
+</div>
+
+<div>
+    <app-upload-list></app-upload-list>
 </div>
 
 

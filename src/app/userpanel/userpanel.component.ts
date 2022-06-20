@@ -1,3 +1,5 @@
+import { FileUploadService } from './../file-upload.service';
+
 import { EventService } from './../addEvent.service';
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
@@ -11,6 +13,7 @@ import * as moment from 'moment';
   
 })
 export class UserpanelComponent implements OnInit {
+  [x: string]: any;
   events?: Event[];
   currentEvent?: Event;
   currentIndex = -1;
@@ -22,14 +25,16 @@ export class UserpanelComponent implements OnInit {
   duration = moment.duration(this.end.diff(this.now));
   days = Math.floor(this.duration.asDays());
   hours = Math.floor(this.duration.asHours());
-  
-  constructor(private eventService: EventService) { }
+  fullPost: any []= [];
+  constructor(private eventService: EventService, private uploadService: FileUploadService) { }
 
   ngOnInit(): void {
     this.retrieveEvents();
+    this.retrievePhotos();
   }
   ngOnChange(): void {
     this.retrieveEvents();
+    this.retrievePhotos();
   }
   retrieveEvents(){
     this.eventService.getAll().snapshotChanges().pipe(
@@ -39,6 +44,17 @@ export class UserpanelComponent implements OnInit {
     )
     ).subscribe(data =>{ this.events = data;
     });
+    console.log(this.fullPost);
   }
+  retrievePhotos(){
+    this.uploadService.getFiles(6).snapshotChanges().pipe(
+      map(change => 
+        change.map(c => ({ key: c.payload.key, ...c.payload.val() }))
+        )
+      ).subscribe(fileUploads => {
+        this.fileUploads = fileUploads;
+      });
+  }
+
 
 }

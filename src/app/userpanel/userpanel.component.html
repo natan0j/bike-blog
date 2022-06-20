@@ -32,9 +32,9 @@
 </div>
 </div>
 
-    <div class="posts">
-      <div class="container">
-      <div 
+    <div class="contain">
+      <div class="leftColumn">
+      <div class="leftColumn"
         
           
           *ngFor="let event of events; let i = index"
@@ -53,5 +53,12 @@
       
         </div>
         </div>
+        <div class="rightColumn">
+        <div
+        *ngFor="let file of fileUploads">
+        <img src="{{ file.url }}">
+      </div>
+      </div>
     </div>  
+   
 

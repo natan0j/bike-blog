@@ -3,5 +3,6 @@ export class Event {
     name?: string;
     date?: string;
     description?: string | null;
+    image?: string | null;
 
 }

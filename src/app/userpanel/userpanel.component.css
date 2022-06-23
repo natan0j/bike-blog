@@ -2,7 +2,7 @@
   position: absolute;
   top: 0%;
   width: 70vw;
-  height: 90vh;
+  height: auto;
   clip-path: polygon(0 0, 100% 0, 75% 100%, 0% 100%);
   background-image: url('../../assets/images/bike1.jpg');
   background-size: cover;
@@ -65,8 +65,8 @@ svg {
 }
 .right h2 {
   text-align: right;
-  margin-top: 20%;
   font-family: "Avenir Next", sans-serif;
+  padding-top: 20%;
   font-weight: 900;
   font-size: 3vw;
   text-transform: uppercase;
@@ -85,39 +85,86 @@ svg {
   font-style: italic;
   letter-spacing: 0.05em;
 }
-p {
+.text {
   font-size: 1.5vw;
   word-wrap: break-word;
   color: rgb(144, 144, 144);
   padding: 1%;
+  margin: auto;
+}
+.fast {
+  margin-top: 5%;
+  clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
+  width: 75%;
+  text-align: center;
+  background-color: #bdce00;
+  font-size: 3vw;
 }
 .title {
   font-size: 2vw;
-  padding-top: 2%;
-  color:#bdce00;
+  padding: 1%;
+  color: black;
   padding-left: 10%;
+  font-weight: bold;
+  font-style: italic;
 }
 .date {
-  font-size: 0.7vw;
+  font-size: 1vw;
+  text-align: right;
+  margin-right: 25%;
+  color: rgb(144, 144, 144);
 }
-img {
-  width: 40vw;
-  height: 40vh;
+.eventPhoto {
+  width: 50%;
+  height: 50%;
+  margin: auto;
 }
 
 .contain {
   background-color: rgb(29,29,29);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas: "leftColumn rightColumn";
 }
 .leftColumn{
   grid-area: leftColumn;
   display: flex;
   flex-direction: column;
 }
-.rightColumn {
-  grid-area: rightColumn;
-  display: flex;
-  flex-direction: column;
+
+
+@media (max-width:800px) {
+  .left {
+    padding-top: 10%;
+  }
+  
+  .left span {
+    font-size: 5vw;
+  }
+  .right h1 {
+    font-size: 4vw;
+  }
+  .right h2 {
+    font-size: 4vw;
+  }
+  .fast {
+    margin-top: 30%;
+  }
+  .title {
+    font-size: 4vw;
+    
+  }
+  .date {
+    font-size: 2vw;
+  }
+  .text {
+    font-size: 2vw;
+    word-break: break-word;
+    margin: auto;
+  }
+  .eventPhoto {
+    width: 50%;
+    height: 50%;
+    margin: auto;
+  }
 }
+
+
+

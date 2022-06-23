@@ -12,7 +12,8 @@ export class EventDetailsComponent implements OnInit {
   currentEvent: Event = {
     name: '',
     date: '',
-    description: ''
+    description: '',
+    image: ''
   };
   message = '';
   constructor(private eventService: EventService) { }
@@ -27,7 +28,8 @@ export class EventDetailsComponent implements OnInit {
  updateEvent(): void {
   const data = {
     name: this.currentEvent.name,
-    date: this.currentEvent.date
+    date: this.currentEvent.date,
+    image: this.currentEvent.image
   };
   if (this.currentEvent.key) {
     this.eventService.update(this.currentEvent.key, data)

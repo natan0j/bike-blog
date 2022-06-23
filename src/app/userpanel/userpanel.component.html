@@ -4,7 +4,7 @@
   <h1>INFOS</h1>
   <h1>HISTORY</h1>
   <h1>AND MORE</h1>
-  <h2>Scroll Down</h2>
+  <h1>Scroll Down</h1>
   <!--
   <div class="counter">
   <h3 *ngIf="days>0">{{ days }} DAYS LEFT</h3>
@@ -33,7 +33,6 @@
 </div>
 
     <div class="contain">
-      <div class="leftColumn">
       <div class="leftColumn"
         
           
@@ -41,24 +40,21 @@
           [class.active]="i == currentIndex"
           
         >
+        <div class="fast">
         <p class="title">
           {{ event.name }}
           </p>
+          </div>
+          <br>
+          <img class="eventPhoto" src="{{ event.image }}">
           <p class="date">
           {{ event.date}}
           </p>
           <p class="text">
           {{ event.description}}
           </p>
-      
+          
         </div>
-        </div>
-        <div class="rightColumn">
-        <div
-        *ngFor="let file of fileUploads">
-        <img src="{{ file.url }}">
-      </div>
-      </div>
     </div>  
    
 

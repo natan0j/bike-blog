@@ -33,7 +33,4 @@ ngOnInit(): void {
     this.submitted = false;
     this.event = new Event();
   }
-  clickImage(): void {
-    this.event.image = 'halo'
-  }
 }

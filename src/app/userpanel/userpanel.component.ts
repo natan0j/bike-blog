@@ -1,3 +1,4 @@
+import { url } from 'inspector';
 import { FileUploadService } from './../file-upload.service';
 
 import { EventService } from './../addEvent.service';
@@ -14,7 +15,8 @@ import * as moment from 'moment';
 })
 export class UserpanelComponent implements OnInit {
   [x: string]: any;
-  events?: Event[];
+  events: Event[];
+  fullPost: any[];
   currentEvent?: Event;
   currentIndex = -1;
   title = '';
@@ -25,7 +27,7 @@ export class UserpanelComponent implements OnInit {
   duration = moment.duration(this.end.diff(this.now));
   days = Math.floor(this.duration.asDays());
   hours = Math.floor(this.duration.asHours());
-  fullPost: any []= [];
+
   constructor(private eventService: EventService, private uploadService: FileUploadService) { }
 
   ngOnInit(): void {
@@ -43,8 +45,8 @@ export class UserpanelComponent implements OnInit {
         )
     )
     ).subscribe(data =>{ this.events = data;
+    console.log(this.events)
     });
-    console.log(this.fullPost);
   }
   retrievePhotos(){
     this.uploadService.getFiles(6).snapshotChanges().pipe(
@@ -53,6 +55,7 @@ export class UserpanelComponent implements OnInit {
         )
       ).subscribe(fileUploads => {
         this.fileUploads = fileUploads;
+        console.log()
       });
   }
 

@@ -3,12 +3,11 @@
   position: absolute;
   top: 0%;
   width: 70vw;
-  height: auto;
+  height: 100%;
   clip-path: polygon(0 0, 100% 0, 75% 100%, 0% 100%);
   background-image: url('../../assets/images/bike1.jpg');
   background-size: cover;
   color: #bdce00;
-  height: 100vh;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -65,26 +64,22 @@ svg {
   background-color: #bdce00;
 }
 .right h2 {
-  text-align: right;
   font-family: "Avenir Next", sans-serif;
-  padding-top: 20%;
   font-weight: 900;
-  font-size: 3vw;
+  font-size: 1vw;
   text-transform: uppercase;
   font-style: italic;
   letter-spacing: 0.05em;
   padding-right: 1%;
-  background-color: #bdce00;
-  padding: 1%;
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  text-align: right;
+  
 }
-.right h3 {
-  text-align: center;
-  font-family: "Avenir Next", sans-serif;
-  font-weight: 900;
-  font-size: 1.3vw;
-  text-transform: uppercase;
-  font-style: italic;
-  letter-spacing: 0.05em;
+.right h2 a {
+  color: #bdce00;
+  font-size: 2vw;
 }
 .text {
   font-size: 1.5vw;
@@ -101,6 +96,7 @@ svg {
   text-align: center;
   background-color: #bdce00;
   font-size: 3vw;
+  text-transform: uppercase;
 }
 .title {
   font-size: 2vw;
@@ -130,22 +126,49 @@ svg {
   display: flex;
   flex-direction: column;
 }
-
-
+.header {
+  text-align: center;
+  padding-top: 2%;
+}
+.header h2 {
+  font-size: 3vw;
+    font-family: "Avenir Next", sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+  font-style: italic;
+  letter-spacing: 0.05em;
+  color: #bdce00;
+}
+.header p {
+  font-size: 0.8vw;
+    color: rgb(99, 99, 99);
+    font-weight: bolder;
+}
+footer {
+  width: 100%;
+  color: black;
+  text-align: center;
+}
 @media (max-width:800px) {
   .left {
-    padding-top: 10%;
+    height: 60vh;
+  }
+  .container {
+    height: 60vh;
   }
   
   .left span {
     font-size: 5vw;
+    transform: translateY(-50px);
   }
   .right h1 {
     font-size: 4vw;
   }
   .right h2 {
     font-size: 4vw;
+    bottom: 25%;
   }
+  
   .fast {
     margin-top: 30%;
   }
@@ -166,7 +189,29 @@ svg {
     height: 50%;
     margin: auto;
   }
+ .header p {
+  font-size: 2vw;
+ }
+ .header h2 {
+  padding: 0;
+ }
+ .leftColumn {
+  transform: translateY(-30%);
+ }
+ .right h2 a img {
+  width: 25px;
+  height: 25px;
+}
 }
 
 
+@media (max-width:1200px) {
 
+  .left {
+    height: 75%;
+  }
+  .container {
+    height: 90%;
+  }
+
+}

@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 export class LoginGuardService {
   constructor(private auth: Auth  ) {}
     login({email,password}: User){
-      return signInWithEmailAndPassword(this.auth, email, password = 'admin1')
+      return signInWithEmailAndPassword(this.auth, email, password)
     }
     register({email,password}: User){
       return createUserWithEmailAndPassword(this.auth, email, password);

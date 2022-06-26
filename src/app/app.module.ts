@@ -43,6 +43,7 @@ import { UploadListComponent } from './upload-list/upload-list.component';
 import { CyclersComponent } from './cyclers/cyclers.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -93,7 +94,7 @@ import {MatCardModule} from '@angular/material/card';
 
   ],
   providers: [
-    ScreenTrackingService,UserTrackingService, LoginGuardService,
+    ScreenTrackingService,UserTrackingService, LoginGuardService, {provide: LocationStrategy, useClass: HashLocationStrategy}
   ],
   bootstrap: [AppComponent]
 })

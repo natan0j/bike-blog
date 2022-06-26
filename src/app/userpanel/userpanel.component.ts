@@ -10,7 +10,7 @@ import * as moment from 'moment';
 @Component({
   selector: 'app-userpanel',
   templateUrl: './userpanel.component.html',
-  styleUrls: ['./userpanel.component.css']
+  styleUrls: ['./userpanel.component.css'],
   
 })
 export class UserpanelComponent implements OnInit {

@@ -1,3 +1,4 @@
+
 .left {
   position: absolute;
   top: 0%;
@@ -91,6 +92,7 @@ svg {
   color: rgb(144, 144, 144);
   padding: 1%;
   margin: auto;
+  width: 80%;
 }
 .fast {
   margin-top: 5%;
@@ -119,9 +121,9 @@ svg {
   height: 50%;
   margin: auto;
 }
-
 .contain {
   background-color: rgb(29,29,29);
+  transform: translateY(-1px);
 }
 .leftColumn{
   grid-area: leftColumn;

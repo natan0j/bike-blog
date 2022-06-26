@@ -1,0 +1,28 @@
+<div class="main">
+    <div class="header" (click)="this.toggleExpand = !this.toggleExpand">
+<h2 >Cycling Teams</h2>
+<p>Click to expand and click on shirt</p>
+</div>
+<div class="container" [@container]="toggleExpand">
+    <div class="team" *ngFor="let team of teams;">
+        <img src="{{ team.teamImage }}"[class.selected]="team === selectedTeam"  (click)="expandRiders(team)">
+        <h3>{{team.teamName}}</h3> 
+        </div>
+        
+
+
+</div>
+</div>
+<mat-card *ngIf="selectedTeam" class="popup">
+            
+    <mat-card-title  style="color: white; text-align: center;" mat-dialog-title>{{ selectedTeam?.teamName }}</mat-card-title>
+    <p mat-typography style="text-align: left;">{{ selectedTeam?.teamDescription}}</p>
+<ul>
+    <h3>Squad:</h3>
+    <li *ngFor="let rider of selectedTeam?.teamRiders;">
+        <a href="{{ rider.riderUrl }}">{{rider.riderName}}</a>
+
+    </li>
+</ul>
+<button mat-raised-button (click)="selectedTeam = undefined">Close</button>  
+</mat-card>

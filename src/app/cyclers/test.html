@@ -1,0 +1,22 @@
+<div class="main">
+    <h2>Cycling Teams</h2>
+    <div class="container">
+        <div class="team" *ngFor="let team of teams;">
+            <img src="{{ team.teamImage }}"[class.selected]="team === selectedTeam"  (click)="expandRiders(team)">
+            <h2>{{team.teamName}}</h2> 
+            <ng-container #riderDescription>
+                
+                    <h2  style="text-align: center ;" mat-dialog-title>{{ selectedTeam.teamName }}</h2>
+                    <p mat-typography style="text-align: left;">{{ selectedTeam.teamDescription}}</p>
+                <div class="rider" *ngFor="let rider of selectedTeam.teamRiders as i" style="text-align:left;">
+                    
+                    <a href="{{ team.teamRiders.riderUrl }}" style="color: black ;"> {{ team.teamRiders.riderName}} </a>
+                </div>
+    
+                    
+            </ng-container>
+        </div>
+    
+    </div>
+    </div>
+    

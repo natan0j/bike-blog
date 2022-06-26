@@ -1,3 +1,4 @@
+import { MatDialogModule } from '@angular/material/dialog';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
 
 import { NgModule } from '@angular/core';
@@ -39,6 +40,10 @@ import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { FileUploadFormComponent } from './file-upload-form/file-upload-form.component';
 import { UploadDetailsComponent } from './upload-details/upload-details.component';
 import { UploadListComponent } from './upload-list/upload-list.component';
+import { CyclersComponent } from './cyclers/cyclers.component';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,6 +59,7 @@ import { UploadListComponent } from './upload-list/upload-list.component';
     FileUploadFormComponent,
     UploadDetailsComponent,
     UploadListComponent,
+    CyclersComponent,
   
     
   ],
@@ -79,6 +85,9 @@ import { UploadListComponent } from './upload-list/upload-list.component';
     provideStorage(() => getStorage()),
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase),
+    MatDialogModule,
+    MatButtonModule,
+    MatCardModule,
    
     
 

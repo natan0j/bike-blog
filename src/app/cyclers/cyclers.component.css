@@ -38,10 +38,9 @@
     color: rgb(99, 99, 99);
 }
 .popup {
-    position: absolute;
+    position: fixed;
     border-radius: 6px;
     width: 50%;
-    top: 125%;
     left: 25%;
     background-color: rgba(4, 4, 4, 0.75);
     z-index: 10; 
@@ -52,6 +51,7 @@
 }
 .team {
     width: 150px;
+    height: 200px;
     padding: 0.5%;
     border-style: inset;
     text-align: center;
@@ -66,6 +66,9 @@
 @media (max-width:800px) {
     .team {
         margin: auto;
+        margin-top: 5%;
+        height: 200px;
+        width: 150px;
     }
     .header p {
         font-size: 2vw;

@@ -13,7 +13,7 @@
 
 </div>
 </div>
-<mat-card *ngIf="selectedTeam" class="popup">
+<mat-card *ngIf="selectedTeam" class="popup" [ngStyle]="{ 'top' : Height }">
             
     <mat-card-title  style="color: white; text-align: center;" mat-dialog-title>{{ selectedTeam?.teamName }}</mat-card-title>
     <p mat-typography style="text-align: left;">{{ selectedTeam?.teamDescription}}</p>

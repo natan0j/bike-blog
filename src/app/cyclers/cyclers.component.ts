@@ -20,7 +20,7 @@ const DEFAULT_DURATION = 1000;
 })
 export class CyclersComponent implements OnInit {
   @ViewChild ('riderDescription') riderDescription: TemplateRef<any>;
-  
+  Height = 25 + '%';
   teams = TEAMS;
   selectedTeam?: Team;
   toggleExpand = true;

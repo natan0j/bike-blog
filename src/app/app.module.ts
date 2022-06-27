@@ -25,7 +25,6 @@ import { provideMessaging,getMessaging } from '@angular/fire/messaging';
 import { providePerformance,getPerformance } from '@angular/fire/performance';
 import { provideRemoteConfig,getRemoteConfig } from '@angular/fire/remote-config';
 import { provideStorage,getStorage } from '@angular/fire/storage';
-import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { AdminpanelComponent } from './adminpanel/adminpanel.component';
 import { LoginGuardService } from './login-guard.service';
@@ -44,13 +43,13 @@ import { CyclersComponent } from './cyclers/cyclers.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
     AppComponent,
     CountdownComponent,
     EventAssignComponent,
-    SignupComponent,
     LoginComponent,
     AdminpanelComponent,
     LoginMainComponent,
@@ -89,6 +88,7 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     MatDialogModule,
     MatButtonModule,
     MatCardModule,
+    MatFormFieldModule,
    
     
 

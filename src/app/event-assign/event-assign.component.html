@@ -2,27 +2,27 @@
     Sekcja zarządzania eventami
 </h1>
 
-<div *ngIf="!submitted">
+<div *ngIf="!submitted" class="container">
     <form #eventForm="ngForm" (ngSubmit)="onSubmit(eventForm)">
         <div class="form-group">
-        <label>Event Name</label>
+        <p>Event Name</p>
         <input class="form-control" name="name" #name="ngModel"
         [(ngModel)]="event.name" placeholder="Event Name" required>
         </div>
         <div class="form-group">
-            <label>Event Date</label>
+            <p>Event Date</p>
             <input class="form-control" name="date" #name="ngModel" type="date"
             [(ngModel)]="event.date" placeholder="Event Date" required>
             </div>
             <div class="form-group">
-                <label>Event Description</label>
+                <p>Event Description</p>
                
                 <textarea class="form-control" name="description" #name="ngModel" [(ngModel)]="event.description">
                     Type something about this blog...
                 </textarea>
                 </div>
                 <div class="form-group">
-                    <label>Event Image</label>
+                    <p>Event Image</p>
                     <input class="form-control" name="image" #name="ngModel"
                     [(ngModel)]="event.image" placeholder="Event Image" required>
                     </div>
@@ -34,12 +34,12 @@
     <button (click)="newEvent()">Create New</button>
 </div>
 
-<div>
+<div class="foto">
     <h2>Dodaj foto do postu</h2>
     <app-file-upload-form></app-file-upload-form>
 </div>
 
-<div>
+<div class="events">
     <app-upload-list></app-upload-list>
 </div>
 

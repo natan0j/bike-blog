@@ -1,25 +1,72 @@
+<div class="container">
+<div class="right">
+  <h1>BLOG</h1>
+  <h1>TEAMS</h1>
+  <h1>ARTICLES</h1>
+  <h1>Scroll Down</h1>
+  <h2>
+    <a href="https://instagram.com/109thtdf?igshid=YmMyMTA2M2Y=">
+      Instagram
+    </a>
+    </h2>
+  <!--
+  <div class="counter">
+  <h3 *ngIf="days>0">{{ days }} DAYS LEFT</h3>
+  <h3 *ngIf="days<=0">{{hours}} HOURS LEFT </h3>
+  </div>
+-->
+  </div>
 
+<div class="left">
+  <svg xmlns="http://www.w3.org/2000/svg">
+  
+    <!-- filterUnits is required to prevent clipping the blur outside the viewBox -->
+    
+      <filter id="motion-blur-filter" filterUnits="userSpaceOnUse">
+        
+        <!-- We only want horizontal blurring. x: 100, y: 0 -->
+        
+          <feGaussianBlur stdDeviation="100 0"></feGaussianBlur>
+      </filter>
+  </svg>
+  
+  <!-- We use a custom attribute to set the text that the pseudo element should display and blur. In this case, we use the first character of the word. -->
+  
+  <span filter-content="S">TourDeFrance</span>
+</div>
+</div>
+<app-cyclers></app-cyclers>
 
-    <div class="posts">
-      <div class="container">
-      <div 
+    <div class="contain">
+      <div class="header">
+      <h2>Articles</h2>
+      <p>Fresh information</p>
+      </div>
+      <div class="leftColumn"
         
           
           *ngFor="let event of events; let i = index"
           [class.active]="i == currentIndex"
           
         >
+        <div class="fast">
         <p class="title">
           {{ event.name }}
           </p>
+          </div>
+          <br>
+          <img class="eventPhoto" src="{{ event.image }}">
           <p class="date">
           {{ event.date}}
           </p>
           <p class="text">
           {{ event.description}}
           </p>
-      
-        </div>
+          
         </div>
     </div>  
+    <footer>
+      <h3> 2022 jbdev</h3>
+    </footer>
+   
 

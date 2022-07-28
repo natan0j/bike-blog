@@ -1,3 +1,7 @@
+li {
+    margin: 3%;
+}
+
 li:hover {
     color: blue;
     font-size: 1rem;

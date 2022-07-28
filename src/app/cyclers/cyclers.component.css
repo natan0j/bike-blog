@@ -1,0 +1,81 @@
+.main {
+    overflow: hidden;
+    margin: 0;
+    transform: translateY(-0.3px);
+}
+
+.container {
+    display: flex;
+    z-index: 1;
+    flex-wrap: wrap;
+}
+.container img {
+    cursor: pointer;
+}
+
+.header {
+
+    background-color: rgb(29,29,29);
+    clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
+    font-weight: bolder;
+    padding: 2%;
+    padding-top: 3%;
+    text-align: center;
+    
+}
+.header h2 {
+    font-size: 3vw;
+    font-family: "Avenir Next", sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+  font-style: italic;
+  letter-spacing: 0.05em;
+  color: #bdce00;
+  cursor: pointer;
+}
+.header p {
+    font-size: 0.8vw;
+    color: rgb(99, 99, 99);
+}
+.popup {
+    position: fixed;
+    border-radius: 6px;
+    width: 50%;
+    left: 25%;
+    background-color: rgba(4, 4, 4, 0.75);
+    z-index: 10; 
+    color: white;
+}
+.popup a {
+    color: white;
+}
+.team {
+    width: 150px;
+    height: 200px;
+    padding: 0.5%;
+    border-style: inset;
+    text-align: center;
+}
+.team h3 {
+    font-weight: bold;
+}
+.team img {
+    margin: auto;
+}
+
+@media (max-width:800px) {
+    .team {
+        margin: auto;
+        margin-top: 5%;
+        height: 200px;
+        width: 150px;
+    }
+    .header p {
+        font-size: 2vw;
+    }
+    .header {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+
+}

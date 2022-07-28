@@ -1,3 +1,4 @@
+import { MatDialogModule } from '@angular/material/dialog';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
 
 import { NgModule } from '@angular/core';
@@ -24,7 +25,6 @@ import { provideMessaging,getMessaging } from '@angular/fire/messaging';
 import { providePerformance,getPerformance } from '@angular/fire/performance';
 import { provideRemoteConfig,getRemoteConfig } from '@angular/fire/remote-config';
 import { provideStorage,getStorage } from '@angular/fire/storage';
-import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { AdminpanelComponent } from './adminpanel/adminpanel.component';
 import { LoginGuardService } from './login-guard.service';
@@ -34,20 +34,33 @@ import { EventsComponent } from './events/events.component';
 import { list } from 'rxfire/database';
 import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireModule } from '@angular/fire/compat';
-import { EventDetailsComponent } from './event-details/event-details.component';
+import { EventDetailsComponent } from './event-details/event-details.component'; 
+import { AngularFireStorage } from '@angular/fire/compat/storage';
+import { FileUploadFormComponent } from './file-upload-form/file-upload-form.component';
+import { UploadDetailsComponent } from './upload-details/upload-details.component';
+import { UploadListComponent } from './upload-list/upload-list.component';
+import { CyclersComponent } from './cyclers/cyclers.component';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
     AppComponent,
     CountdownComponent,
     EventAssignComponent,
-    SignupComponent,
     LoginComponent,
     AdminpanelComponent,
     LoginMainComponent,
     UserpanelComponent,
     EventsComponent,
     EventDetailsComponent,
+    FileUploadFormComponent,
+    UploadDetailsComponent,
+    UploadListComponent,
+    CyclersComponent,
+  
     
   ],
   imports: [
@@ -72,12 +85,16 @@ import { EventDetailsComponent } from './event-details/event-details.component';
     provideStorage(() => getStorage()),
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase),
+    MatDialogModule,
+    MatButtonModule,
+    MatCardModule,
+    MatFormFieldModule,
    
     
 
   ],
   providers: [
-    ScreenTrackingService,UserTrackingService, LoginGuardService,
+    ScreenTrackingService,UserTrackingService, LoginGuardService, {provide: LocationStrategy, useClass: HashLocationStrategy}
   ],
   bootstrap: [AppComponent]
 })
